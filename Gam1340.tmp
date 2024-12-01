@@ -1,0 +1,307 @@
+[gd_scene load_steps=20 format=3 uid="uid://btjhhwbhotk60"]
+
+[ext_resource type="Script" path="res://Source/Game.gd" id="1_jmcle"]
+[ext_resource type="Texture2D" uid="uid://cjcd3hsib6pf2" path="res://Assets/DS DSi - New Super Mario Bros - Wanted.png" id="1_l678i"]
+[ext_resource type="Texture2D" uid="uid://ceae116kwj5j7" path="res://Assets/Circle.png" id="1_oq0rd"]
+[ext_resource type="Script" path="res://Source/Head.gd" id="4_w0gne"]
+[ext_resource type="FontFile" uid="uid://i0a28tu3qsiu" path="res://Assets/DSFont.ttf" id="5_3sjam"]
+[ext_resource type="AudioStream" uid="uid://1au0o186sn7" path="res://Assets/BGM.mp3" id="6_patss"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auc8w"]
+atlas = ExtResource("1_l678i")
+region = Rect2(2, 59, 254, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3x7wf"]
+atlas = ExtResource("1_l678i")
+region = Rect2(0, 450, 30, 35)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xi66j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ecvh2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bnecj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i08ty"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fyof3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6d3ux"]
+atlas = ExtResource("1_l678i")
+region = Rect2(31.5, 450, 30, 35)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mam7u"]
+load_path = "res://.godot/imported/DS DSi - New Super Mario Bros - Wanted.png-e23c32e9d33947169ba2de566bbc7800.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07h85"]
+atlas = SubResource("CompressedTexture2D_mam7u")
+region = Rect2(64, 450, 30, 35)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e08wa"]
+load_path = "res://.godot/imported/DS DSi - New Super Mario Bros - Wanted.png-e23c32e9d33947169ba2de566bbc7800.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpmah"]
+atlas = SubResource("CompressedTexture2D_e08wa")
+region = Rect2(96.5, 450, 30, 35)
+
+[sub_resource type="FontVariation" id="FontVariation_np1h1"]
+base_font = ExtResource("5_3sjam")
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_jmcle")
+
+[node name="BG" type="ColorRect" parent="."]
+offset_right = 254.0
+offset_bottom = 190.0
+color = Color(0, 0, 0, 1)
+
+[node name="LeftCircle" type="Sprite2D" parent="."]
+clip_children = 1
+position = Vector2(-75, 95)
+texture = ExtResource("1_oq0rd")
+
+[node name="WantedPoster" type="Sprite2D" parent="LeftCircle"]
+position = Vector2(202, 0)
+texture = SubResource("AtlasTexture_auc8w")
+
+[node name="RightCircle" type="Sprite2D" parent="."]
+clip_children = 1
+position = Vector2(329, 95)
+texture = ExtResource("1_oq0rd")
+
+[node name="WantedPoster" type="Sprite2D" parent="RightCircle"]
+position = Vector2(-202, 0)
+texture = SubResource("AtlasTexture_auc8w")
+
+[node name="Middle" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(127, 95)
+texture = ExtResource("1_oq0rd")
+
+[node name="Heads" type="Node2D" parent="."]
+
+[node name="HeadCopies" type="Node2D" parent="."]
+position = Vector2(-83, -70)
+
+[node name="0" type="CharacterBody2D" parent="HeadCopies"]
+script = ExtResource("4_w0gne")
+
+[node name="Sprite" type="Sprite2D" parent="HeadCopies/0"]
+texture = SubResource("AtlasTexture_3x7wf")
+
+[node name="Button" type="Button" parent="HeadCopies/0/Sprite"]
+offset_left = -13.0
+offset_top = -10.0
+offset_right = 13.0
+offset_bottom = 10.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xi66j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ecvh2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bnecj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_i08ty")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fyof3")
+
+[node name="Button3" type="Button" parent="HeadCopies/0/Sprite"]
+offset_left = -7.0
+offset_top = -15.0
+offset_right = 7.0
+offset_bottom = -11.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xi66j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ecvh2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bnecj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_i08ty")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fyof3")
+
+[node name="Button2" type="Button" parent="HeadCopies/0/Sprite"]
+offset_left = -8.0
+offset_top = 11.0
+offset_right = 8.0
+offset_bottom = 16.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xi66j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ecvh2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bnecj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_i08ty")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fyof3")
+
+[node name="1" type="CharacterBody2D" parent="HeadCopies"]
+script = ExtResource("4_w0gne")
+
+[node name="Sprite" type="Sprite2D" parent="HeadCopies/1"]
+texture = SubResource("AtlasTexture_6d3ux")
+
+[node name="Button" type="Button" parent="HeadCopies/1/Sprite"]
+offset_left = -8.0
+offset_top = -13.0
+offset_right = 8.0
+offset_bottom = 11.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xi66j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ecvh2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bnecj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_i08ty")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fyof3")
+
+[node name="Button5" type="Button" parent="HeadCopies/1/Sprite"]
+offset_left = -3.0
+offset_top = -16.0
+offset_right = 3.0
+offset_bottom = -14.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xi66j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ecvh2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bnecj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_i08ty")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fyof3")
+
+[node name="Button4" type="Button" parent="HeadCopies/1/Sprite"]
+offset_left = -4.0
+offset_top = 12.0
+offset_right = 4.0
+offset_bottom = 16.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xi66j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ecvh2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bnecj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_i08ty")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fyof3")
+
+[node name="Button2" type="Button" parent="HeadCopies/1/Sprite"]
+offset_left = -12.0
+offset_top = -9.0
+offset_right = -8.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xi66j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ecvh2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bnecj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_i08ty")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fyof3")
+
+[node name="Button3" type="Button" parent="HeadCopies/1/Sprite"]
+offset_left = 8.0
+offset_top = -9.0
+offset_right = 12.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xi66j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ecvh2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bnecj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_i08ty")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fyof3")
+
+[node name="2" type="CharacterBody2D" parent="HeadCopies"]
+script = ExtResource("4_w0gne")
+
+[node name="Sprite" type="Sprite2D" parent="HeadCopies/2"]
+texture = SubResource("AtlasTexture_07h85")
+
+[node name="Button" type="Button" parent="HeadCopies/2/Sprite"]
+offset_left = -8.0
+offset_top = -15.0
+offset_right = 8.0
+offset_bottom = 16.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xi66j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ecvh2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bnecj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_i08ty")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fyof3")
+
+[node name="Button2" type="Button" parent="HeadCopies/2/Sprite"]
+offset_left = -14.0
+offset_top = -9.0
+offset_right = -8.0
+offset_bottom = 11.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xi66j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ecvh2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bnecj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_i08ty")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fyof3")
+
+[node name="Button3" type="Button" parent="HeadCopies/2/Sprite"]
+offset_left = 8.0
+offset_top = -9.0
+offset_right = 14.0
+offset_bottom = 11.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xi66j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ecvh2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bnecj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_i08ty")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fyof3")
+
+[node name="3" type="CharacterBody2D" parent="HeadCopies"]
+script = ExtResource("4_w0gne")
+
+[node name="Sprite" type="Sprite2D" parent="HeadCopies/3"]
+texture = SubResource("AtlasTexture_cpmah")
+
+[node name="Button" type="Button" parent="HeadCopies/3/Sprite"]
+offset_left = -8.0
+offset_top = -15.0
+offset_right = 8.0
+offset_bottom = 16.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xi66j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ecvh2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bnecj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_i08ty")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fyof3")
+
+[node name="Button2" type="Button" parent="HeadCopies/3/Sprite"]
+offset_left = -11.0
+offset_top = -3.0
+offset_right = -8.0
+offset_bottom = 11.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xi66j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ecvh2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bnecj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_i08ty")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fyof3")
+
+[node name="Button3" type="Button" parent="HeadCopies/3/Sprite"]
+offset_left = 8.0
+offset_top = -3.0
+offset_right = 11.0
+offset_bottom = 11.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xi66j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ecvh2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bnecj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_i08ty")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fyof3")
+
+[node name="Time" type="Label" parent="."]
+z_index = 999
+offset_top = 178.0
+offset_right = 40.0
+offset_bottom = 201.0
+theme_override_fonts/font = SubResource("FontVariation_np1h1")
+theme_override_font_sizes/font_size = 13
+text = "0"
+
+[node name="Round" type="Label" parent="."]
+z_index = 999
+offset_left = 118.0
+offset_top = 178.0
+offset_right = 254.0
+offset_bottom = 201.0
+theme_override_fonts/font = SubResource("FontVariation_np1h1")
+theme_override_font_sizes/font_size = 13
+text = "1"
+horizontal_alignment = 2
+
+[node name="AddedTime" type="Label" parent="."]
+visible = false
+z_index = 999
+offset_left = -100.0
+offset_top = 101.0
+offset_right = -82.0
+offset_bottom = 114.0
+theme_override_fonts/font = SubResource("FontVariation_np1h1")
+theme_override_font_sizes/font_size = 13
+text = "+ 5"
+
+[node name="MinusTime" type="Label" parent="."]
+visible = false
+z_index = 999
+offset_left = -100.0
+offset_top = 101.0
+offset_right = -82.0
+offset_bottom = 114.0
+theme_override_fonts/font = SubResource("FontVariation_np1h1")
+theme_override_font_sizes/font_size = 13
+text = "- 10"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_patss")
+autoplay = true

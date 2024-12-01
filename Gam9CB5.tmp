@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://btjhhwbhotk60"]
+
+[ext_resource type="Script" path="res://Source/Game.gd" id="1_jmcle"]
+[ext_resource type="Texture2D" uid="uid://cjcd3hsib6pf2" path="res://Assets/DS DSi - New Super Mario Bros - Wanted.png" id="1_l678i"]
+[ext_resource type="Texture2D" uid="uid://ceae116kwj5j7" path="res://Assets/Circle.png" id="1_oq0rd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auc8w"]
+atlas = ExtResource("1_l678i")
+region = Rect2(2, 59, 254, 190)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_jmcle")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 256.0
+offset_bottom = 192.0
+color = Color(0, 0, 0, 1)
+
+[node name="LeftCircle" type="Sprite2D" parent="."]
+clip_children = 1
+position = Vector2(-75, 95)
+texture = ExtResource("1_oq0rd")
+
+[node name="WantedPoster" type="Sprite2D" parent="LeftCircle"]
+position = Vector2(202, 0)
+texture = SubResource("AtlasTexture_auc8w")
+
+[node name="RightCircle" type="Sprite2D" parent="."]
+clip_children = 1
+position = Vector2(329, 95)
+texture = ExtResource("1_oq0rd")
+
+[node name="WantedPoster" type="Sprite2D" parent="RightCircle"]
+position = Vector2(-202, 0)
+texture = SubResource("AtlasTexture_auc8w")
+
+[node name="Middle" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(127, 95)
+texture = ExtResource("1_oq0rd")
